@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+
 export default function Header({title,searchBar}){
     return(
         
@@ -7,37 +9,37 @@ export default function Header({title,searchBar}){
     <>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
 <div className="container-fluid">
-  <a className="navbar-brand" href="#">{title}</a>
+  <Link  to="/">{title}</Link>
   <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
       <li className="nav-item">
-        <a className="nav-link active" aria-current="page" href="#">Home</a>
+        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">About</a>
+        <Link className="nav-link" to="/about">About</Link>
       </li>
       {/* <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Dropdown
-        </a>
+        </link>
         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a className="dropdown-item" href="#">Action</a></li>
-          <li><a className="dropdown-item" href="#">Another action</a></li>
+          <li><link className="dropdown-item" to="#">Action</link></li>
+          <li><link className="dropdown-item" to="#">Another action</link></li>
           <li><hr className="dropdown-divider"/></li>
-          <li><a className="dropdown-item" href="#">Something else here</a></li>
+          <li><link className="dropdown-item" to="#">Something else here</link></li>
         </ul>
       </li>
       <li className="nav-item">
-        <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <link className="nav-link disabled" to="#" tabindex="-1" aria-disabled="true">Disabled</link>
       </li> */}
     </ul>
     {searchBar?<form className="d-flex">
       <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
       <button className="btn btn-outline-success" type="submit">Search</button>
-    </form>:"Chal oyeeeee.."}
+    </form>:""}
   </div>
 </div>
 </nav>

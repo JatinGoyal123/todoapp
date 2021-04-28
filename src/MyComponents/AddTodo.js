@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-export const AddTodo = ({addtodo}) => {
+export const AddTodo = ({addTodo}) => {
     
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
@@ -12,7 +12,7 @@ export const AddTodo = ({addtodo}) => {
             alert('It should not be empty');
         }
        else{
-        addtodo(title,desc);
+        addTodo(title,desc);
         setTitle('');
         setDesc('');
        }
