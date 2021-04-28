@@ -1,15 +1,31 @@
-import React from 'react';
-import {TodoItem} from './TodoItem';
-export const Todos=(props)=>{
-    return (
-        <div className="container my-3">
-            <h3 className="text-primary  text-center">Todo Items</h3>
-            {props.todos.length?
-            (props.todos.map((todo)=>{
-                    return <TodoItem todo={todo} key={todo.sno}onDelete={props.onDelete}/>   
-            })):"noooooooooo"}
-            
-        </div>
+import React, { useEffect } from 'react';
+import { TodoItem } from './TodoItem';
+export const Todos = (props) => {
+  // useEffect(() => {
+  //    console.log(props.todos);
 
-    )
-}
+  // }, [props.todos])
+  let myStyle = {
+    minHeight: '70vh',
+    margin: '40px  auto ',
+  };
+  return (
+    <div className="container" style={myStyle}>
+      <h3>Todos Items</h3>
+      {props.todos.length
+        ? props.todos.map((todo) => {
+            return (
+              <>
+                <TodoItem
+                  todo={todo}
+                  key={todo.sno}
+                  onDelete={props.onDelete}
+                />
+                <hr />
+              </>
+            );
+          })
+        : 'noooooooooo'}
+    </div>
+  );
+};
